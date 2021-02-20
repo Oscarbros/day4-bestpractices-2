@@ -50,11 +50,16 @@ import time
 
 t0 = time.time()
 rbf_network(X, beta, theta)
-print("Python: ", time.time() - t0)
+pythonTime = time.time() - t0
+print("Python: ", pythonTime)
 
-t0 = time.time()
+t1 = time.time()
 rbf_scipy(X, beta)
-print("Scipy: ", time.time() - t0)
+scipyTime = time.time() - t1
+print("Scipy: ", scipyTime)
+
+timesFaster = pythonTime/scipyTime 
+print(timesFaster)
 
 # Testing the performance of Cython
 #t0 = time.time()
